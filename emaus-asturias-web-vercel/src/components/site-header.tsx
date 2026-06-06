@@ -1,13 +1,23 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { navItems, siteName } from "@/lib/site";
 
 export function SiteHeader() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="sticky top-0 z-40 border-b border-night/10 bg-parchment/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-night/10 bg-parchment/95 backdrop-blur">
       <div className="header-shell flex min-h-16 items-center justify-between gap-3 py-2">
-        <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="Inicio EMAÚS Asturias">
-          <span className="relative grid size-10 shrink-0 place-items-center overflow-hidden rounded-full border border-gold/45 bg-white">
+        <Link
+          href="/"
+          className="flex min-w-0 shrink-0 items-center gap-2.5"
+          aria-label="Inicio EMAÚS Asturias"
+          onClick={() => setIsOpen(false)}
+        >
+          <span className="relative grid size-10 shrink-0 place-items-center overflow-hidden rounded-full border border-gold/45 bg-white max-[380px]:size-9">
             <Image
               src="/images/logos/logo-emaus-hombres.png"
               alt="Símbolo de EMAÚS Asturias"
@@ -18,7 +28,7 @@ export function SiteHeader() {
             />
           </span>
           <span className="min-w-0">
-            <span className="block truncate font-display text-lg font-bold leading-tight text-night">
+            <span className="block truncate font-display text-lg font-bold leading-tight text-night max-[380px]:text-base">
               {siteName}
             </span>
             <span className="hidden truncate text-[0.64rem] font-bold uppercase tracking-[0.08em] text-olive xl:block">
@@ -35,17 +45,44 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <details className="group relative lg:hidden">
-          <summary className="btn btn-secondary cursor-pointer list-none">Menú</summary>
-          <nav className="absolute right-0 mt-3 grid w-72 gap-1 rounded-lg border border-night/10 bg-white p-3 text-sm font-bold shadow-soft">
+        <div className="lg:hidden">
+          <button
+            type="button"
+            className="btn btn-secondary min-w-[78px] px-4"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setIsOpen((value) => !value)}
+          >
+            {isOpen ? "Cerrar" : "Menú"}
+          </button>
+        </div>
+      </div>
+
+      {isOpen ? (
+        <>
+          <button
+            type="button"
+            aria-label="Cerrar menú"
+            className="fixed inset-x-0 bottom-0 top-16 z-40 bg-night/25 lg:hidden"
+            onClick={() => setIsOpen(false)}
+          />
+          <nav
+            id="mobile-menu"
+            className="fixed left-3 right-3 top-[4.75rem] z-50 grid max-h-[calc(100svh-5.5rem)] gap-1 overflow-y-auto rounded-lg border border-night/12 bg-white p-3 text-base font-extrabold text-night shadow-soft lg:hidden"
+          >
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="rounded-md px-3 py-2 hover:bg-parchment">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-md px-4 py-3 hover:bg-parchment"
+                onClick={() => setIsOpen(false)}
+              >
                 {item.label}
               </Link>
             ))}
           </nav>
-        </details>
-      </div>
+        </>
+      ) : null}
     </header>
   );
 }
