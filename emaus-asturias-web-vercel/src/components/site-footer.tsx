@@ -15,7 +15,7 @@ export function SiteFooter() {
         <div>
           <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-gold">Mapa</p>
           <div className="mt-4 grid gap-2 text-sm text-white/78">
-            {navItems.slice(0, 6).map((item) => (
+            {navItems.slice(0, 7).map((item) => (
               <Link key={item.href} href={item.href} className="hover:text-gold">
                 {item.label}
               </Link>
