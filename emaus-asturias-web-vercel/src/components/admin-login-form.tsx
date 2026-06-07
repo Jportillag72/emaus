@@ -13,8 +13,8 @@ export function AdminLoginForm() {
   return (
     <form action={formAction} className="card grid gap-5 p-7">
       <label className="label">
-        Email
-        <input className="input" type="email" name="email" required autoComplete="email" />
+        Usuario
+        <input className="input" type="text" name="username" required autoComplete="username" />
       </label>
       <label className="label">
         Contraseña
