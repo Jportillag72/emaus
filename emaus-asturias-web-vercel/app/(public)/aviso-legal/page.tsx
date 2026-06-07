@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
+import { legalNoticeContent } from "@/lib/legal-content";
 
 export const metadata: Metadata = {
   title: "Aviso legal",
@@ -11,7 +12,8 @@ export default function LegalNoticePage() {
     <LegalPage
       slug="aviso-legal"
       title="Aviso legal"
-      lead="Información provisional sobre titularidad, responsabilidad y condiciones de uso."
+      lead="Información sobre titularidad, finalidad de la web, condiciones de uso, responsabilidad y contenidos."
+      defaultContent={legalNoticeContent}
     />
   );
 }
