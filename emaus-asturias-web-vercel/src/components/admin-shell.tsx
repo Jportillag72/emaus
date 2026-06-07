@@ -33,6 +33,12 @@ export async function AdminShell({ children, title, description }: AdminShellPro
               </Link>
             ))}
           </nav>
+          <Link
+            href="/"
+            className="mt-6 block rounded-md border border-white/15 bg-white/10 px-3 py-2 text-sm font-extrabold text-white hover:bg-white hover:text-night"
+          >
+            Volver a la web
+          </Link>
           <div className="mt-8 border-t border-white/10 pt-5">
             <p className="text-xs leading-6 text-white/62">
               {session?.demo ? "Modo demo local" : session?.email}
