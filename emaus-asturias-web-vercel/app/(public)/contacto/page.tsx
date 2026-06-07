@@ -5,7 +5,7 @@ import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "Contacto",
-  description: "Solicita información sobre EMAÚS Asturias, Effetá o Bartimeo."
+  description: "Contacta con EMAÚS Asturias para resolver dudas o recibir información."
 };
 
 type ContactPageProps = {
@@ -28,8 +28,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
     <>
       <PageHero
         eyebrow="Contacto"
-        title="Solicita información"
-        lead="Rellena el formulario indicando el camino que te interesa y la comunidad recibirá tu solicitud para poder responderte con calma. Este envío no supone una inscripción automática."
+        title="Contacta con nosotros"
+        lead="Rellena el formulario con tu consulta y la comunidad recibirá tu mensaje para poder responderte con calma. Si preguntas por un retiro o camino concreto, este envío no supone una inscripción automática."
       />
       <section className="section">
         <div className="shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
