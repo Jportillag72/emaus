@@ -27,7 +27,7 @@ export function formatDateTime(value: string) {
 }
 
 export function formatDateRange(startDate: string, endDate: string) {
-  return "Noviembre 2027 (por concretar fecha)";
+  return "Noviembre 2026 (por concretar fecha)";
 }
 
 export function truncate(value: string, length = 160) {
