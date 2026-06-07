@@ -43,6 +43,7 @@ export function CommunityDetailPage({
     .filter((retreat) => retreat.community === community && retreat.status !== "finalizado")
     .slice(0, 3);
   const contactHref = `${communityPaths[community]}#solicitar-informacion`;
+  const isBartimeo = community === "bartimeo";
 
   return (
     <>
@@ -52,17 +53,31 @@ export function CommunityDetailPage({
             <p className="eyebrow">{eyebrow}</p>
             <h1 className="page-title mt-4">{title}</h1>
             <p className="lead mt-6">{lead}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/retiros" className="btn btn-primary">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link href="/retiros" className="btn btn-primary w-full sm:w-fit">
                 Ver retiros
               </Link>
-              <Link href={contactHref} className="btn btn-secondary">
+              <Link href={contactHref} className="btn btn-secondary w-full sm:w-fit">
                 Solicitar información
               </Link>
             </div>
           </div>
-          <div className="grid min-h-64 place-items-center rounded-md border border-night/10 bg-parchment p-8">
-            <Image src={logo} alt={logoAlt} width={260} height={220} className="max-h-56 w-auto object-contain" />
+          <div
+            className={`grid min-h-44 place-items-center rounded-md border border-night/10 bg-parchment md:min-h-64 ${
+              isBartimeo ? "p-2 md:p-4" : "p-5 md:p-8"
+            }`}
+          >
+            <Image
+              src={logo}
+              alt={logoAlt}
+              width={260}
+              height={220}
+              className={
+                isBartimeo
+                  ? "h-40 w-40 rounded-sm object-cover md:h-60 md:w-60"
+                  : "max-h-36 w-auto object-contain md:max-h-56"
+              }
+            />
           </div>
         </div>
       </section>
@@ -92,7 +107,7 @@ export function CommunityDetailPage({
               <h2 className="page-title mt-3">{retreatsTitle}</h2>
               {retreatsIntro ? <p className="mt-5 leading-8 text-ink/72">{retreatsIntro}</p> : null}
             </div>
-            <Link href="/retiros" className="btn btn-secondary w-fit">
+            <Link href="/retiros" className="btn btn-secondary w-full sm:w-fit">
               Ver todos
             </Link>
           </div>
@@ -127,7 +142,7 @@ export function CommunityDetailPage({
         <div className="shell grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <div>
             <p className="eyebrow text-gold">Solicitar información</p>
-            <h2 className="mt-3 font-display text-4xl font-bold leading-tight md:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
               ¿Quieres saber más sobre {communityLabels[community]}?
             </h2>
             <p className="mt-5 max-w-2xl leading-8 text-white/76">
