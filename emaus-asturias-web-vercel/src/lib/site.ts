@@ -94,7 +94,7 @@ export const communityCards = [
     href: "/bartimeo",
     logo: "/images/logos/logo-bartimeo.webp",
     description:
-      "Una experiencia cristiana para jóvenes de 15 a 18 años que desean recuperar la mirada y caminar acompañados.",
+      "Un camino cristiano para jóvenes de 15 a 18 años que invita a mirar la vida con esperanza, dejarse acompañar y descubrir una fe cercana.",
     buttonLabel: "Conocer Bartimeo"
   }
 ];
