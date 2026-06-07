@@ -16,7 +16,7 @@ export default function AdminLoginPage() {
         <p className="eyebrow">Panel privado</p>
         <h1 className="page-title mt-3">Acceso CMS</h1>
         <p className="mt-4 text-sm leading-7 text-ink/68">
-          Inicia sesión con un usuario creado en Supabase Auth.
+          Inicia sesión con el usuario y la contraseña del panel privado.
         </p>
         <div className="mt-7">
           <AdminLoginForm />
