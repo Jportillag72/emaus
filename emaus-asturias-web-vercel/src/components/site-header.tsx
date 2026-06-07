@@ -99,7 +99,7 @@ export function SiteHeader() {
           <button
             type="button"
             aria-label="Cerrar menú"
-            className="fixed inset-x-0 bottom-0 top-16 z-40 bg-night/25 lg:hidden"
+            className="fixed inset-x-0 top-16 z-40 block h-[calc(100svh-4rem)] w-full bg-night/25 lg:hidden"
             onClick={() => setIsOpen(false)}
           />
           <nav
