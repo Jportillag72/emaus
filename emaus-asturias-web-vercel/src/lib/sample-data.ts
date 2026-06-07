@@ -1,4 +1,5 @@
 import type { ContactRequest, EditablePage, News, Retreat, SiteSetting } from "./types";
+import { legalNoticeContent, privacyPolicyContent } from "./legal-content";
 
 export const sampleRetreats: Retreat[] = [
   {
@@ -140,20 +141,19 @@ export const sampleContactRequests: ContactRequest[] = [
 export const samplePages: EditablePage[] = [
   {
     id: "77777777-7777-4777-8777-777777777777",
-    title: "Privacidad",
+    title: "Política de privacidad",
     slug: "privacidad",
-    content:
-      "Texto provisional de privacidad. Sustituir por el texto legal definitivo antes de publicar.",
-    seo_title: "Privacidad",
-    seo_description: "Política de privacidad de EMAÚS Asturias.",
+    content: privacyPolicyContent,
+    seo_title: "Política de privacidad",
+    seo_description:
+      "Información sobre el tratamiento de datos personales en la web de EMAÚS Asturias.",
     updated_at: "2026-06-01T10:00:00Z"
   },
   {
     id: "88888888-8888-4888-8888-888888888888",
     title: "Aviso legal",
     slug: "aviso-legal",
-    content:
-      "Texto provisional de aviso legal. Sustituir por el texto legal definitivo antes de publicar.",
+    content: legalNoticeContent,
     seo_title: "Aviso legal",
     seo_description: "Aviso legal de EMAÚS Asturias.",
     updated_at: "2026-06-01T10:00:00Z"
