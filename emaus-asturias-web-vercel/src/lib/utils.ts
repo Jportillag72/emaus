@@ -27,11 +27,7 @@ export function formatDateTime(value: string) {
 }
 
 export function formatDateRange(startDate: string, endDate: string) {
-  if (startDate === endDate) {
-    return formatDate(startDate);
-  }
-
-  return `${formatDate(startDate)} - ${formatDate(endDate)}`;
+  return "Noviembre 2027 (por concretar fecha)";
 }
 
 export function truncate(value: string, length = 160) {
