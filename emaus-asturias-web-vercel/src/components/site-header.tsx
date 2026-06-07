@@ -2,11 +2,47 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { navItems, siteName } from "@/lib/site";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    function closeOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    }
+
+    function closeOnDesktop() {
+      if (window.innerWidth >= 1024) {
+        setIsOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", closeOnEscape);
+    window.addEventListener("resize", closeOnDesktop);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+      window.removeEventListener("resize", closeOnDesktop);
+    };
+  }, [isOpen]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-night/10 bg-parchment/95 backdrop-blur">
@@ -69,6 +105,7 @@ export function SiteHeader() {
           <nav
             id="mobile-menu"
             className="fixed left-3 right-3 top-[4.75rem] z-50 grid max-h-[calc(100svh-5.5rem)] gap-1 overflow-y-auto rounded-lg border border-night/12 bg-white p-3 text-base font-extrabold text-night shadow-soft lg:hidden"
+            onClick={() => setIsOpen(false)}
           >
             {navItems.map((item) => (
               <Link
