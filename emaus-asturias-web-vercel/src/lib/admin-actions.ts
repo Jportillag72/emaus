@@ -32,15 +32,15 @@ function fileFrom(formData: FormData, key: string) {
 }
 
 export async function loginAction(_previousState: LoginState, formData: FormData): Promise<LoginState> {
-  const email = text(formData, "email");
+  const username = text(formData, "username") || text(formData, "email");
   const password = text(formData, "password");
 
-  if (!email || !password) {
-    return { error: "Introduce email y contraseña." };
+  if (!username || !password) {
+    return { error: "Introduce usuario y contraseña." };
   }
 
   try {
-    await signInWithPassword(email, password);
+    await signInWithPassword(username, password);
   } catch (error) {
     return {
       error: error instanceof Error ? error.message : "No se pudo iniciar sesión."
