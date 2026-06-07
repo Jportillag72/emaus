@@ -22,11 +22,13 @@ export async function LegalPage({ slug, title, lead, defaultContent }: LegalPage
   const fallbackContent =
     defaultContent ??
     "Texto legal provisional. Sustituir por el contenido definitivo desde el panel privado.";
-  const content = isPlaceholderContent(page?.content) ? fallbackContent : page?.content;
+  const usingFallbackContent = isPlaceholderContent(page?.content);
+  const content = usingFallbackContent ? fallbackContent : page?.content;
+  const pageTitle = usingFallbackContent ? title : page?.title ?? title;
 
   return (
     <>
-      <PageHero eyebrow="Legal" title={page?.title ?? title} lead={lead} />
+      <PageHero eyebrow="Legal" title={pageTitle} lead={lead} />
       <section className="section">
         <div className="shell max-w-3xl">
           <article className="card p-6 md:p-8">
