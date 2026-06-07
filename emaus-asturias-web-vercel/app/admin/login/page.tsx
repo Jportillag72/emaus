@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { AdminLoginForm } from "@/components/admin-login-form";
 
 export const metadata: Metadata = {
@@ -21,6 +22,12 @@ export default function AdminLoginPage() {
         <div className="mt-7">
           <AdminLoginForm />
         </div>
+        <Link
+          href="/"
+          className="mt-5 block text-center text-sm font-extrabold text-night hover:text-olive"
+        >
+          Volver a la web
+        </Link>
       </div>
     </main>
   );
