@@ -7,15 +7,15 @@ export const sampleRetreats: Retreat[] = [
     title: "Retiro EMAÚS Hombres Asturias",
     slug: "retiro-emaus-hombres-asturias",
     community: "emaus_hombres",
-    start_date: "2026-10-02",
-    end_date: "2026-10-04",
+    start_date: "2026-11-01",
+    end_date: "2026-11-01",
     location: "Asturias",
     image_url: "/images/religious/retreat-emaus-hombres.webp",
     short_description:
       "Una experiencia cristiana para hombres adultos que desean vivir un tiempo de encuentro, oración, escucha y comunidad.",
     full_description:
       "Este retiro de EMAÚS Hombres forma parte del camino de EMAÚS Asturias.\n\nEs una experiencia cristiana de encuentro, oración, convivencia y comunidad dirigida a hombres adultos que desean detenerse, abrir el corazón y mirar su vida desde la fe.\n\nEl contenido concreto del retiro se cuida con discreción para preservar la vivencia de quienes participan por primera vez. Todo está preparado por personas que ya han vivido EMAÚS y desean servir a otros desde la acogida y la fe.\n\nEl formulario permite solicitar información. La inscripción no es automática; el equipo correspondiente se pondrá en contacto con cada persona interesada.",
-    status: "inscripciones_abiertas",
+    status: "proximamente",
     is_visible: true,
     created_at: "2026-06-01T10:00:00Z",
     updated_at: "2026-06-01T10:00:00Z"
@@ -25,8 +25,8 @@ export const sampleRetreats: Retreat[] = [
     title: "Retiro EMAÚS Mujeres Asturias",
     slug: "retiro-emaus-mujeres-asturias",
     community: "emaus_mujeres",
-    start_date: "2026-11-13",
-    end_date: "2026-11-15",
+    start_date: "2026-11-01",
+    end_date: "2026-11-01",
     location: "Asturias",
     image_url: "/images/religious/retreat-emaus-mujeres.webp",
     short_description:
@@ -43,8 +43,8 @@ export const sampleRetreats: Retreat[] = [
     title: "Encuentro Effetá Asturias",
     slug: "encuentro-effeta-asturias",
     community: "effeta",
-    start_date: "2027-02-06",
-    end_date: "2027-02-08",
+    start_date: "2026-11-01",
+    end_date: "2026-11-01",
     location: "Asturias",
     image_url: "/images/religious/retreat-effeta.webp",
     short_description:
@@ -61,8 +61,8 @@ export const sampleRetreats: Retreat[] = [
     title: "Retiro Bartimeo Asturias",
     slug: "retiro-bartimeo-asturias",
     community: "bartimeo",
-    start_date: "2027-03-20",
-    end_date: "2027-03-22",
+    start_date: "2026-11-01",
+    end_date: "2026-11-01",
     location: "Asturias",
     image_url: "/images/religious/retreat-bartimeo.webp",
     short_description:
