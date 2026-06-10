@@ -9,7 +9,7 @@ import { parishName } from "@/lib/site";
 
 export default async function HomePage() {
   const [retreats, news] = await Promise.all([getPublicRetreats(), getPublishedNews()]);
-  const upcomingRetreats = retreats.filter((retreat) => retreat.status !== "finalizado").slice(0, 3);
+  const upcomingRetreats = retreats.filter((retreat) => retreat.status !== "finalizado").slice(0, 4);
   const latestNews = news.slice(0, 3);
 
   return (
@@ -20,11 +20,11 @@ export default async function HomePage() {
           alt="Cruz de madera iluminada por la luz de una capilla"
           fill
           sizes="100vw"
-          className="pointer-events-none -z-10 object-cover object-center"
+          className="pointer-events-none -z-10 object-cover object-[68%_center] md:object-center"
           priority
         />
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(250,248,243,0.96)_0%,rgba(250,248,243,0.86)_46%,rgba(250,248,243,0.38)_100%)]" />
-        <div className="shell flex min-h-[calc(100svh-9rem)] max-w-[1120px] flex-col justify-center py-16">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(250,248,243,0.48)_0%,rgba(250,248,243,0.82)_42%,rgba(250,248,243,0.98)_100%)] md:bg-[linear-gradient(90deg,rgba(250,248,243,0.96)_0%,rgba(250,248,243,0.86)_46%,rgba(250,248,243,0.38)_100%)]" />
+        <div className="shell flex min-h-[calc(100svh-4rem)] max-w-[1120px] flex-col justify-end pb-14 pt-36 md:min-h-[calc(100svh-9rem)] md:justify-center md:py-16">
           <p className="eyebrow">EMAÚS Asturias</p>
           <h1 className="display-title mt-4 max-w-4xl">Un encuentro que puede cambiar tu vida</h1>
           <p className="lead mt-7 max-w-2xl">
@@ -32,11 +32,11 @@ export default async function HomePage() {
             descubrir que Dios sigue caminando a nuestro lado. Cada camino ofrece un tiempo para
             detenerse, escuchar la propia vida y volver a mirar la fe con esperanza.
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Link href="/retiros" className="btn btn-primary">
+          <div className="mt-8 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
+            <Link href="/retiros" className="btn btn-primary w-full sm:w-fit">
               Ver próximos retiros
             </Link>
-            <Link href="/contacto" className="btn btn-secondary">
+            <Link href="/contacto" className="btn btn-secondary w-full sm:w-fit">
               Solicitar información
             </Link>
           </div>
@@ -99,7 +99,7 @@ export default async function HomePage() {
               Ver todos
             </Link>
           </div>
-          <div className="relative mb-8 aspect-[16/6] overflow-hidden rounded-md border border-night/10 bg-white">
+          <div className="relative mb-8 aspect-[4/3] overflow-hidden rounded-md border border-night/10 bg-white sm:aspect-[16/6]">
             <Image
               src="/images/religious/retreat-calendar-table.webp"
               alt="Mesa con calendario, cruz de madera y ramas de olivo"
@@ -108,7 +108,7 @@ export default async function HomePage() {
               className="object-cover"
             />
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {upcomingRetreats.map((retreat) => (
               <RetreatCard key={retreat.id} retreat={retreat} />
             ))}
@@ -133,7 +133,7 @@ export default async function HomePage() {
               Esa continuidad ayuda a que la experiencia no se quede en un momento aislado, sino que
               pueda crecer en comunidad, servicio y vida cotidiana.
             </p>
-            <Link href="/comunidad" className="btn bg-white text-night">
+            <Link href="/comunidad" className="btn w-full bg-white text-night sm:w-fit">
               Ver comunidad
             </Link>
           </div>
