@@ -99,15 +99,6 @@ export default async function HomePage() {
               Ver todos
             </Link>
           </div>
-          <div className="relative mb-8 aspect-[4/3] overflow-hidden rounded-md border border-night/10 bg-white sm:aspect-[16/6]">
-            <Image
-              src="/images/religious/retreat-calendar-table.webp"
-              alt="Mesa con calendario, cruz de madera y ramas de olivo"
-              fill
-              sizes="1120px"
-              className="object-cover"
-            />
-          </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {upcomingRetreats.map((retreat) => (
               <RetreatCard key={retreat.id} retreat={retreat} />
