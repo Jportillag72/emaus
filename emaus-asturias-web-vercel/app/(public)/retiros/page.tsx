@@ -19,6 +19,7 @@ export default async function RetreatsPage() {
         eyebrow="Retiros"
         title="Próximas experiencias de encuentro"
         lead="Consulta las fechas publicadas para EMAÚS Hombres, EMAÚS Mujeres, Effetá y Bartimeo. Cada retiro indica su comunidad, fechas, lugar y estado de solicitud de información. El formulario no implica inscripción automática: el equipo responsable se pondrá en contacto posteriormente."
+        wideLead
       />
       <section className="border-b border-night/10 bg-white">
         <div className="shell py-8">
