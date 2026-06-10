@@ -134,7 +134,7 @@ export default async function RetreatDetailPage({ params }: PageProps) {
               </div>
             </dl>
             <Link href={contactHref} className="btn btn-primary mt-6 w-full">
-              Solicitar información
+              Más información
             </Link>
           </aside>
           <article className="card p-6 md:p-8">
