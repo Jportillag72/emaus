@@ -13,7 +13,7 @@ export function RetreatCard({ retreat }: RetreatCardProps) {
   return (
     <article className="card grid overflow-hidden">
       <Link href={`/retiros/${retreat.slug}`} className="grid">
-        <span className="relative grid aspect-[16/10] place-items-center bg-white">
+        <span className="relative grid aspect-[4/3] place-items-center bg-white sm:aspect-[16/10]">
           {retreat.image_url ? (
             <Image
               src={retreat.image_url}
@@ -27,7 +27,7 @@ export function RetreatCard({ retreat }: RetreatCardProps) {
           )}
         </span>
       </Link>
-      <div className="grid gap-4 p-6">
+      <div className="grid gap-4 p-5 sm:p-6">
         <div className="flex flex-wrap items-center gap-2">
           <StatusBadge type="retreat" status={retreat.status} />
           <span className="rounded-full bg-white px-3 py-1 text-xs font-extrabold text-olive">
@@ -44,8 +44,8 @@ export function RetreatCard({ retreat }: RetreatCardProps) {
           <p className="mt-1 text-sm text-ink/62">{retreat.location}</p>
           <p className="mt-4 text-sm leading-7 text-ink/72">{retreat.short_description}</p>
         </div>
-        <Link href={`/retiros/${retreat.slug}`} className="btn btn-secondary w-fit">
-          Ver retiro
+        <Link href={`/retiros/${retreat.slug}`} className="btn btn-secondary w-full sm:w-fit">
+          Más información
         </Link>
       </div>
     </article>
