@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true
+  },
+  icons: {
+    icon: [{ url: "/images/logos/logo-emaus-hombres.png", type: "image/png" }],
+    shortcut: [{ url: "/images/logos/logo-emaus-hombres.png", type: "image/png" }],
+    apple: [{ url: "/images/logos/logo-emaus-hombres.png", type: "image/png" }]
   }
 };
 
